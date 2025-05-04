@@ -5,7 +5,7 @@ app.http('read-from-blob', {
     methods: ['GET', 'POST'],
     authLevel: 'anonymous',
     handler: async (request, context) => {
-        const name = req.query.name;
+        const name = request.query.name;
         if (!name) {
             context.res = {status: 400, body: "Please pass a name on the query string"};
             return;
